@@ -2,7 +2,7 @@
 import os
 import PyPDF2
 
-SignPDF = PyPDF2.PdfFileReader('.\\PDF\\ZJSign\\Sign.pdf')   # 读取签名pdf内容
+SignPDF = PyPDF2.PdfFileReader('.\\signPDF\\Sign.pdf')   # 读取签名pdf内容
 
 def add_sign(Sign_pdf,page_pdf):
     """
@@ -14,7 +14,7 @@ def add_sign(Sign_pdf,page_pdf):
     page_pdf.mergePage(Sign_pdf.getPage(0))
     return page_pdf
 
-for root, dirs, files in os.walk('.\\PDF', topdown=False):
+for root, dirs, files in os.walk('.\\sourcePDF', topdown=False):
     for name in files:
         address = os.path.join(root, name)
         print(address)
